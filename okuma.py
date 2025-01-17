@@ -6,7 +6,7 @@ import time
 # Firebase ayarları
 cred = credentials.Certificate("firebase_key.json")
 firebase_admin.initialize_app(cred, {
-    "databaseURL": "https://enerjitakipveguvenliksistemi-default-rtdb.europe-west1.firebasedatabase.app/"
+    "databaseURL": "Firebase URL"
 })
 
 # PLC bağlantısı için ayarlar
@@ -25,7 +25,7 @@ while True:
             print(f"d0 durumu: {coil_status[0]}")
 
             # Firebase veritabanına veri yazma
-            coil_with_kw = f"{coil_status[0]} kW"
+            coil_with = f"{coil_status[0]} "
             ref = db.reference('Anlık Güç')  # Firebase'deki "relay" node'una veri yaz
             ref.set(coil_status[0] )# M0 bitinin durumunu yaz
              
