@@ -6,7 +6,7 @@ import time
 # Firebase başlatma
 cred = credentials.Certificate("fx5u.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://fx5u-4dcee-default-rtdb.europe-west1.firebasedatabase.app/'
+    'databaseURL': 'Firebase URL'
 })
 
 # Firebase referansları
@@ -14,7 +14,7 @@ relay_ref = db.reference('relay')
 analog_value_ref = db.reference('analogValue')
 
 # Modbus bağlantısı
-plc_client = ModbusClient(host="192.168.3.250", port=502)
+plc_client = ModbusClient(host="IP ADRESS", port=502)
 
 if plc_client.open():
     print("PLC'ye bağlanıldı.")
